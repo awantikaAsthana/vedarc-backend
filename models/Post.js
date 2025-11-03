@@ -5,7 +5,7 @@ const postSchema = new Schema({
     title: { type: String, required: [true, 'Title is required'], trim: true, maxlength: [100, 'Title cannot exceed 100 characters'] },
     content: { type: String, required: [true, 'Content is required'] },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: [true, 'Author is required'] },
-    tags: { type: [String], default: [] },
+    tags: [{ type: String }],
     status: { type: String, enum: ['draft', 'published', 'archived'], default: 'draft' },
     likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     comments: [{

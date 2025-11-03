@@ -10,7 +10,7 @@ const helmet = require('helmet');
 
 // Import Routes
 const userRoutes = require('./routes/userRoutes');
-//const postRoutes = require('./routes/postRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 
 
@@ -31,7 +31,7 @@ app.use(helmet());// for secuirity
 
 // Routes  ---->
 app.use('/api/users', userRoutes);
-//app.use('/api/posts', postRoutes);
+app.use('/api/posts', postRoutes);
 
 app.use ("/", (req, res) => {
     res.send ("Vedarc Backend API is running");
